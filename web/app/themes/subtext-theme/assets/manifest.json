@@ -22,6 +22,6 @@
     }
   },
   "config": {
-    "devUrl": "http://subtext-theme.dev"
+    "devUrl": "http://example.test"
   }
 }
