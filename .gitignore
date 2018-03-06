@@ -43,3 +43,4 @@ publish
 /wp-content/w3tc-config/*
 /.htaccess
 /.htpasswd
+.env
