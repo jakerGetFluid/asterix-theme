@@ -44,3 +44,4 @@ publish
 /.htaccess
 /.htpasswd
 *.env
+/web/app/uploads/*
