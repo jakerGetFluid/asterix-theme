@@ -1,1 +1,0 @@
-<?php echo the_sub_field('subtext_column_configuration'); ?>

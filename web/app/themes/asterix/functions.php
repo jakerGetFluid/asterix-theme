@@ -16,7 +16,6 @@ $sage_includes = [
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer 
-  'lib/acf-setup.php' //ACF setup
 ];
 
 foreach ($sage_includes as $file) {
