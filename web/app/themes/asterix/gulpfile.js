@@ -10,9 +10,8 @@ var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
 var merge        = require('merge-stream');
-var cssNano      = require('gulp-cssnano');
+var cleanCSS     = require('gulp-clean-css');
 var plumber      = require('gulp-plumber');
 var rev          = require('gulp-rev');
 var runSequence  = require('run-sequence');
@@ -86,13 +85,10 @@ var cssTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(function() {
-      return gulpif('*.less', less());
-    })
-    .pipe(function() {
       return gulpif('*.scss', sass({
         outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
-        includePaths: ['.'],
+        includePaths: ['.', './bower_components/foundation-sites/scss/'],
         errLogToConsole: !enabled.failStyleTask
       }));
     })
@@ -104,9 +100,7 @@ var cssTasks = function(filename) {
         'opera 12'
       ]
     })
-    .pipe(cssNano, {
-      safe: true
-    })
+    .pipe(cleanCSS)
     .pipe(function() {
       return gulpif(enabled.rev, rev());
     })
@@ -246,6 +240,7 @@ gulp.task('watch', function() {
   browserSync.init({
     files: ['{lib,templates}/**/*.php', '*.php'],
     proxy: config.devUrl,
+    browser: "Google Chrome",
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']

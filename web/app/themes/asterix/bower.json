@@ -7,7 +7,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-  },
-  "overrides": {
+    "foundation-sites": "^6.4.3"
   }
 }
