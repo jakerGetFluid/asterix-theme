@@ -41,14 +41,16 @@
             $slideCTAtext = get_sub_field('subtext_slide_cta_label');
             $slideCTAlink = get_sub_field('subtext_slide_cta_url');
             ?>
-            <div class="slider-carousel-inner<?php echo $slideTextColor ? ' text-dark' : ' text-light'; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>">
-              <div class="slider-carousel-content">
-                <?php echo $slideHeadline ? '<h2>'.$slideHeadline.'</h2>' : ''; ?>
-                <?php echo $slideSubheadline ? '<h3>'.$slideSubheadline.'</h3>' : ''; ?>
-                <?php echo $slideParagraph ? '<p>'.$slideParagraph.'</p>' : ''; ?>
-                <?php if($slideCTAtext && $slideCTAlink){ ?>
-                  <a href="<?php echo $slideCTAlink; ?>" class="button"><?php echo $slideCTAtext; ?></a>
-                <?php } ?>
+            <div class="<?php echo ($slideTextColor == 'dark') ? ' text-dark' : ' text-light'; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>">
+              <div class="slider-carousel-inner">
+                <div class="slider-carousel-content">
+                  <?php echo $slideHeadline ? '<h2>'.$slideHeadline.'</h2>' : ''; ?>
+                  <?php echo $slideSubheadline ? '<h3>'.$slideSubheadline.'</h3>' : ''; ?>
+                  <?php echo $slideParagraph ? '<p>'.$slideParagraph.'</p>' : ''; ?>
+                  <?php if($slideCTAtext && $slideCTAlink){ ?>
+                    <a href="<?php echo $slideCTAlink; ?>" class="button"><?php echo $slideCTAtext; ?></a>
+                  <?php } ?>
+                </div>
               </div>
             </div>
           <?php endwhile; ?>
@@ -71,12 +73,16 @@
           <script type="text/javascript">
             (function($) {
               $('.slider-carousel-<?php echo $layoutIndex; ?>').slick({
-                fade: <?php echo $fade ? 'true' : 'false'; ?>,
                 autoplay: <?php echo $autoplay ? 'true' : 'false'; ?>,
                 <?php if($autoplay): ?>
                 autoplaySpeed: <?php echo $autoplaySpeed; ?>,
                 <?php endif; ?>
-                slidesToShow: <?php echo $slidesToShow; ?>
+                slidesToShow: <?php echo $slidesToShow; ?>,
+                <?php if($slidesToShow == 1) : ?>
+                fade: <?php echo $fade ? 'true' : 'false'; ?>,
+                <?php else : ?>
+                fade: false,
+                <?php endif; ?>
               });
             })(jQuery);
           </script>
