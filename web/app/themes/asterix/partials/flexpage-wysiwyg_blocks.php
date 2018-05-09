@@ -3,7 +3,7 @@
 $columns = get_sub_field('subtext_wysiwyg_columns');
 $columnsTitle = get_sub_field('subtext_wysiwyg_section_title');
 
-echo '<div class="grid-container full">';
+echo '<div class="content">';
 
 if($columnsTitle) {
   echo '<h2>'.$columnsTitle.'</h2>';

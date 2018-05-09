@@ -27,9 +27,17 @@
 
         elseif( $layout == 'subtext_slider_carousel' ): 
 
+          $slickSettings = get_sub_field('subtext_slider_carousel_settings');
+          $autoplay = $slickSettings['subtext_slider_auto_play'];
+          $autoplaySeconds = $slickSettings['subtext_slider_auto_play_speed'];
+          $autoplaySpeed = $autoplaySeconds*1000;
+          $slidesToShow = $slickSettings['subtext_slides_to_show'];
+          $fade = $slickSettings['subtext_slider_fade_transition'];
+          $fullCarousel = $slickSettings['subtext_full_width_container'];
+
           if( have_rows('subtext_slides') ): ?>
 
-          <div class="slider-carousel-<?php echo $layoutIndex; ?>">
+          <div class="slider-carousel-<?php echo $layoutIndex; ?><?php if ($slidesToShow > 1) {echo ' content';}; ?><?php if ($fullCarousel) {echo ' full-carousel';}; ?>" data-equalizer>
             
           <?php while ( have_rows('subtext_slides') ) : the_row(); 
             $slideBgImg = get_sub_field('subtext_slide_background_image');
@@ -41,8 +49,8 @@
             $slideCTAtext = get_sub_field('subtext_slide_cta_label');
             $slideCTAlink = get_sub_field('subtext_slide_cta_url');
             ?>
-            <div class="<?php echo ($slideTextColor == 'dark') ? ' text-dark' : ' text-light'; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>">
-              <div class="slider-carousel-inner">
+            <div class="slider-carousel<?php echo ($slideTextColor == 'dark') ? ' text-dark' : ' text-light'; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>" data-equalizer-watch>
+              <div class="slider-carousel-inner<?php if ($slidesToShow == 1 && $fullCarousel) {echo ' content';}; ?>">
                 <div class="slider-carousel-content">
                   <?php echo $slideHeadline ? '<h2>'.$slideHeadline.'</h2>' : ''; ?>
                   <?php echo $slideSubheadline ? '<h3>'.$slideSubheadline.'</h3>' : ''; ?>
@@ -60,15 +68,6 @@
           else :
               // no rows found
           endif; ?>
-
-          <?php
-          $slickSettings = get_sub_field('subtext_slider_carousel_settings');
-          $fade = $slickSettings['subtext_slider_fade_transition'];
-          $autoplay = $slickSettings['subtext_slider_auto_play'];
-          $autoplaySeconds = $slickSettings['subtext_slider_auto_play_speed'];
-          $autoplaySpeed = $autoplaySeconds*1000;
-          $slidesToShow = $slickSettings['subtext_slides_to_show'];
-          ?>
 
           <script type="text/javascript">
             (function($) {

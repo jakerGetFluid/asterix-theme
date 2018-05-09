@@ -23,6 +23,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5af0d6774d5a1",
+                            "label": "Full Width Container",
+                            "name": "subtext_full_width_container",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5ae3ad68a3272",
                             "label": "Section Title",
                             "name": "subtext_wysiwyg_section_title",
@@ -458,7 +477,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "25",
+                                        "width": "20",
                                         "class": "",
                                         "id": ""
                                     },
@@ -485,7 +504,7 @@
                                         ]
                                     ],
                                     "wrapper": {
-                                        "width": "25",
+                                        "width": "20",
                                         "class": "",
                                         "id": ""
                                     },
@@ -501,38 +520,82 @@
                                     "key": "field_5ae766522880c",
                                     "label": "Slides to Show",
                                     "name": "subtext_slides_to_show",
-                                    "type": "number",
+                                    "type": "select",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "25",
+                                        "width": "20",
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": 1,
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "min": "",
-                                    "max": "",
-                                    "step": ""
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2",
+                                        "3": "3",
+                                        "4": "4",
+                                        "5": "5"
+                                    },
+                                    "default_value": [
+                                        1
+                                    ],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "return_format": "value",
+                                    "placeholder": ""
                                 },
                                 {
                                     "key": "field_5ae765d628809",
                                     "label": "Fade Transition",
                                     "name": "subtext_slider_fade_transition",
                                     "type": "true_false",
-                                    "instructions": "The Fade option only applies if \"Slides to Show\" = 1, otherwise fade will be set to false.",
+                                    "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5ae766522880c",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
-                                        "width": "25",
+                                        "width": "20",
                                         "class": "",
                                         "id": ""
                                     },
                                     "message": "",
                                     "default_value": 1,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_5af0d6d14d5a2",
+                                    "label": "Full Width Container",
+                                    "name": "subtext_full_width_container",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5ae766522880c",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "20",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
                                     "ui": 1,
                                     "ui_on_text": "",
                                     "ui_off_text": ""
@@ -745,5 +808,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525712091
+    "modified": 1525749517
 }

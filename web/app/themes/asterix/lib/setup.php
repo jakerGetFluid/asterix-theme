@@ -86,10 +86,21 @@ function display_sidebar() {
     is_404(),
     is_front_page(),
     is_page_template('template-custom.php'),
+    is_page_template('page-flexible_page.php'),
     is_page()
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
+}
+
+function display_full() {
+  static $display;
+
+  isset($display) || $display = in_array(true, [
+    is_page_template('page-flexible_page.php')
+  ]);
+
+  return apply_filters('sage/display_full', $display);
 }
 
 /**
