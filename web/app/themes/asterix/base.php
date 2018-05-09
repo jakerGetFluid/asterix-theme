@@ -19,7 +19,7 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
     <div class="wrap container" role="document">
-      <div class="content<?php if (Setup\display_full()) {echo ' full-width';} ?>">
+      <div id="site-wrap-inner" class="content<?php if (Setup\display_full()) {echo ' grid-container full';} ?>">
         <main class="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->

@@ -1,11 +1,40 @@
-.content.full-width {
-  margin-top: 0;
-  max-width: 100%;
-  
-  .main {
-    padding-left: 0;
-    padding-right: 0;
+#site-wrap-inner {
+  &.grid-container.full {
+    margin-top: 0;
+    max-width: 100%;
+
+    .main {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
+}
+
+.margin-right {
+  margin-right: $global-margin;
+}
+
+.padding-all {
+  padding: $global-padding;
+}
+
+.padding-vertical {
+  padding-bottom: $global-padding;
+  padding-top: $global-padding;
+}
+
+.text-light {
+  color: $white;
+}
+
+/* SLICK SLIDER */
+
+.slick-list {
+  margin-left: -$global-margin;
+}
+
+.slick-slide {
+  padding-left: $global-padding; 
 }
 
 .slider-carousel {
@@ -13,7 +42,7 @@
   background-size: cover;
 }
 
-.full-carousel {
+.slick-slider.full {
   
   .slider-carousel-inner {
     align-items: center;
@@ -32,8 +61,4 @@
   .slick-next {
     right: 25px;
   }
-}
-
-.text-light {
-  color: $white;
 }

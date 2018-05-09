@@ -25,7 +25,7 @@
                         {
                             "key": "field_5af0d6774d5a1",
                             "label": "Full Width Container",
-                            "name": "subtext_full_width_container",
+                            "name": "subtext_wysiwyg_full_width",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
@@ -40,6 +40,45 @@
                             "ui": 1,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5af33e5c53940",
+                            "label": "Background Color",
+                            "name": "subtext_wysiwyg_background_color",
+                            "type": "color_picker",
+                            "instructions": "optional",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
+                        },
+                        {
+                            "key": "field_5af3476887c76",
+                            "label": "Text Color",
+                            "name": "subtext_wysiwyg_text_color",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "dark",
+                            "layout": "horizontal",
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5ae3ad68a3272",
@@ -576,7 +615,7 @@
                                 {
                                     "key": "field_5af0d6d14d5a2",
                                     "label": "Full Width Container",
-                                    "name": "subtext_full_width_container",
+                                    "name": "subtext_slider_full_width",
                                     "type": "true_false",
                                     "instructions": "",
                                     "required": 0,
@@ -808,5 +847,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525749517
+    "modified": 1525893018
 }

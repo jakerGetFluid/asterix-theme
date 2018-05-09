@@ -2,8 +2,18 @@
 
 $columns = get_sub_field('subtext_wysiwyg_columns');
 $columnsTitle = get_sub_field('subtext_wysiwyg_section_title');
+$wysiwygFull = get_sub_field('subtext_wysiwyg_full_width');
+$wysiwygBg = get_sub_field('subtext_wysiwyg_background_color');
+$wysiwygText = get_sub_field('subtext_wysiwyg_text_color');
 
-echo '<div class="content">';
+if($wysiwygFull) : ?>
+  <div class="grid-container full" style="background-color:<?php echo $wysiwygBg ? $wysiwygBg : '#ffffff'; ?>;">
+    <div class="content<?php echo ($wysiwygText == 'dark') ? ' text-dark' : ' text-light'; ?><?php if($wysiwygBg){echo ' padding-vertical';} ?>">
+<?php 
+else : ?>
+    <div class="content<?php echo ($wysiwygText == 'dark') ? ' text-dark' : ' text-light'; ?><?php if($wysiwygBg){echo ' padding-all';} ?>" style="background-color:<?php echo $wysiwygBg ? $wysiwygBg : '#ffffff'; ?>;">
+<?php
+endif;
 
 if($columnsTitle) {
   echo '<h2>'.$columnsTitle.'</h2>';
@@ -84,6 +94,12 @@ elseif($columns == '4'):
 <?php  
 endif;
 
-echo '</div>'; // end .grid-container
-
+if($wysiwygFull) : ?>
+    </div>
+  </div>
+<?php 
+else : ?>
+  </div>
+<?php
+endif;
 ?>
