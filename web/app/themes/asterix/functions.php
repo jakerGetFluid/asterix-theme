@@ -26,3 +26,21 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+// Add Shortcode
+function button_shortcode( $atts , $content = null ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'url' => 'http://',
+			'color' => 'primary',
+		),
+		$atts,
+		'button'
+	);
+
+	return '<a href="'.$atts['url'].'" class="button '.$atts['color'].'">' . $content . '</a>';
+
+}
+add_shortcode( 'button', 'button_shortcode' );
