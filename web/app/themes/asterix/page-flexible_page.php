@@ -88,6 +88,9 @@
         <?php
         // end subtext_slider_carousel
 
+        elseif ($layout == 'subtext_accordion') :
+          get_template_part('partials/flexpage', 'accordion');
+
         endif;
 
       endwhile;
@@ -97,5 +100,7 @@
         // no layouts found
 
     endif;
+
   ?>
+
 <?php endwhile; ?>

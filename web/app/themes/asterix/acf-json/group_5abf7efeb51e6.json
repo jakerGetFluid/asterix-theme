@@ -823,6 +823,94 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5af375e942b23": {
+                    "key": "5af375e942b23",
+                    "name": "subtext_accordion",
+                    "label": "Accordion",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5af375fa42b24",
+                            "label": "Title",
+                            "name": "subtext_accordion_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5af3760c42b25",
+                            "label": "Accordion Parts",
+                            "name": "subtext_accordion_parts",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "field_5af3762d42b26",
+                            "min": 1,
+                            "max": 0,
+                            "layout": "row",
+                            "button_label": "Add Accordion Section",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5af3762d42b26",
+                                    "label": "Accordion Section Title",
+                                    "name": "subtext_accordion_section_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5af3765442b27",
+                                    "label": "Accordion Section Content",
+                                    "name": "subtext_accordion_section_content",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Section",
@@ -847,5 +935,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525893018
+    "modified": 1525905051
 }
