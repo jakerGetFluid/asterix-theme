@@ -27,7 +27,7 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
-// Add Shortcode
+// Add Button Shortcode
 function button_shortcode( $atts , $content = null ) {
 
 	// Attributes
@@ -44,3 +44,10 @@ function button_shortcode( $atts , $content = null ) {
 
 }
 add_shortcode( 'button', 'button_shortcode' );
+
+// Admin stylesheet
+function load_custom_wp_admin_style() {
+    wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/dist/styles/admin-style.css', false, '1.0.0' );
+    wp_enqueue_style( 'custom_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
