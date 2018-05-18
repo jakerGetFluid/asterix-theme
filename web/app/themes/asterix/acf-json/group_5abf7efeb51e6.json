@@ -831,6 +831,54 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5aff04b4b6923",
+                            "label": "Display on load",
+                            "name": "subtext_accordion_display_on_load",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "open": "First accordion open",
+                                "closed": "All closed"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "open",
+                            "layout": "vertical",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5aff0668b6924",
+                            "label": "Accordion Functionality",
+                            "name": "subtext_accordion_functionality",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "single": "One accordion open at a time",
+                                "multi": "Multiple accordions can be open"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "single",
+                            "layout": "vertical",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5af375fa42b24",
                             "label": "Title",
                             "name": "subtext_accordion_title",
@@ -937,5 +985,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1526495987
+    "modified": 1526662933
 }
