@@ -37,7 +37,7 @@
 
           if( have_rows('subtext_slides') ): ?>
 
-          <div class="slider-carousel-<?php echo $layoutIndex; ?><?php if ($slidesToShow > 1) {echo ' content';}; ?><?php if ($fullCarousel) {echo ' grid-container full';}; ?>" data-equalizer>
+          <div class="slider-carousel-<?php echo $layoutIndex; ?><?php if ($slidesToShow > 1) {echo ' content';}; ?><?php echo $fullCarousel ? ' grid-container full' : ' content'; ?>" data-equalizer>
             
           <?php while ( have_rows('subtext_slides') ) : the_row(); 
             $slideBgImg = get_sub_field('subtext_slide_background_image');
@@ -49,12 +49,12 @@
             $slideCTAtext = get_sub_field('subtext_slide_cta_label');
             $slideCTAlink = get_sub_field('subtext_slide_cta_url');
             ?>
-            <div class="slider-carousel<?php echo ($slideTextColor == 'dark') ? ' text-dark' : ' text-light'; ?><?php if ($slidesToShow > 1) {echo ' padding-all';}; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>" data-equalizer-watch>
+            <div class="slider-carousel<?php echo ($slideTextColor == 'dark') ? ' text-dark' : ' text-light'; ?><?php if ($slidesToShow > 1 || !$fullCarousel) {echo ' padding-all';}; ?>" style="<?php echo $slideBgImg ? 'background-image:url('.$slideBgImg.');' : ''; ?><?php echo $slideBgColor ? 'background-color:'.$slideBgColor.';' : ''; ?>" data-equalizer-watch>
               <div class="slider-carousel-inner<?php if ($slidesToShow == 1 && $fullCarousel) {echo ' content';}; ?>">
                 <div class="slider-carousel-content">
                   <?php echo $slideHeadline ? '<h2>'.$slideHeadline.'</h2>' : ''; ?>
                   <?php echo $slideSubheadline ? '<h3>'.$slideSubheadline.'</h3>' : ''; ?>
-                  <?php echo $slideParagraph ? '<p>'.$slideParagraph.'</p>' : ''; ?>
+                  <?php echo $slideParagraph ? $slideParagraph : ''; ?>
                   <?php if($slideCTAtext && $slideCTAlink){ ?>
                     <a href="<?php echo $slideCTAlink; ?>" class="button"><?php echo $slideCTAtext; ?></a>
                   <?php } ?>
