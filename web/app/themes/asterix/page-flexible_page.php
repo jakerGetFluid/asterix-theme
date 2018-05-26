@@ -121,6 +121,12 @@
             ?>
           </div>
         <?php
+        elseif ($layout == 'subtext_divider_line') : 
+          $fullDivider = get_sub_field('subtext_full_width_divider'); ?>
+          <div class="<?php echo $fullDivider ? 'divider-full' : ' content'; ?>">
+            <hr>
+          </div>
+        <?php
         endif;
 
       endwhile;

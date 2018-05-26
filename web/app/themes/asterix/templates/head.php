@@ -6,8 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" type="text/css" href="<?php echo Assets\asset_path('styles/slick.css') ?>"/>
-  <link rel="stylesheet" type="text/css" href="<?php echo Assets\asset_path('styles/slick-theme.css') ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/styles/css/slick.css'; ?>"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/styles/css/slick-theme.css'; ?>"/>
   
   <?php wp_head(); ?>
 </head>

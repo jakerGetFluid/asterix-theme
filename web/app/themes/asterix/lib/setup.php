@@ -114,7 +114,7 @@ function assets() {
   }
   
   //wp_enqueue_script('jquery-migrate', 'http://code.jquery.com/jquery-migrate-1.2.1.min.js', ['jquery'], null, false);
-  wp_enqueue_script('slick-js', Assets\asset_path('scripts/slick.min.js'), ['jquery'], null, false);
+  wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/scripts/slick.min.js', ['jquery'], null, false);
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, false);
   
 }

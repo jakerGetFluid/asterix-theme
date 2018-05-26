@@ -17,3 +17,10 @@
     @include grid-column($main-sm-columns);
   }
 }
+
+.grid-x {
+  .cell {
+    background-position: center;
+    background-size: cover;
+  }
+}

@@ -23,10 +23,10 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5af0d6774d5a1",
-                            "label": "Full Width Container",
-                            "name": "subtext_wysiwyg_full_width",
-                            "type": "true_false",
+                            "key": "field_5b0847458ee5f",
+                            "label": "Row Options",
+                            "name": "subtext_wysiwyg_row_options",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -35,50 +35,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5af33e5c53940",
-                            "label": "Background Color",
-                            "name": "subtext_wysiwyg_background_color",
-                            "type": "color_picker",
-                            "instructions": "optional",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
-                        },
-                        {
-                            "key": "field_5af3476887c76",
-                            "label": "Text Color",
-                            "name": "subtext_wysiwyg_text_color",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "dark": "Dark",
-                                "light": "Light"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "dark",
-                            "layout": "horizontal",
-                            "return_format": "value"
+                            "clone": [
+                                "group_5b0405289eb7c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         },
                         {
                             "key": "field_5ae3ad68a3272",
@@ -108,7 +71,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -124,6 +87,33 @@
                             "default_value": "",
                             "layout": "vertical",
                             "return_format": "value"
+                        },
+                        {
+                            "key": "field_5b088c564b562",
+                            "label": "Space Between Columns",
+                            "name": "subtext_wysiwyg_space_between_columns",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5abf7f7687516",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         },
                         {
                             "key": "field_5abf806087518",
@@ -186,7 +176,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -228,10 +218,10 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_5abf80de8751b",
-                                    "label": "Column One Content",
-                                    "name": "subtext_wysiwyg_two_column_one_content",
-                                    "type": "wysiwyg",
+                                    "key": "field_5b08494cc4806",
+                                    "label": "Column One",
+                                    "name": "subtext_wysiwyg_two_column_one",
+                                    "type": "group",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -240,17 +230,55 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
+                                    "layout": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5b08487484502",
+                                            "label": "Column One Settings",
+                                            "name": "subtext_wysiwyg_two_column_one_settings",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_5b084356c68f0"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0
+                                        },
+                                        {
+                                            "key": "field_5abf80de8751b",
+                                            "label": "Column One Content",
+                                            "name": "subtext_wysiwyg_two_column_one_content",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0
+                                        }
+                                    ]
                                 },
                                 {
-                                    "key": "field_5abf81048751c",
-                                    "label": "Column Two Content",
-                                    "name": "subtext_wysiwyg_two_column_two_content",
-                                    "type": "wysiwyg",
+                                    "key": "field_5b0849b3c4807",
+                                    "label": "Column Two",
+                                    "name": "subtext_wysiwyg_two_column_two",
+                                    "type": "group",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -259,11 +287,49 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
+                                    "layout": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5b0848b084503",
+                                            "label": "Column Two Settings",
+                                            "name": "subtext_wysiwyg_two_column_two_settings",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_5b084356c68f0"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0
+                                        },
+                                        {
+                                            "key": "field_5abf81048751c",
+                                            "label": "Column Two Content",
+                                            "name": "subtext_wysiwyg_two_column_two_content",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -284,7 +350,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "33",
                                 "class": "",
                                 "id": ""
                             },
@@ -959,6 +1025,35 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5b099aff2fcc8": {
+                    "key": "5b099aff2fcc8",
+                    "name": "subtext_divider_line",
+                    "label": "Divider Line",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b099ea7ffe66",
+                            "label": "Full Width Divider",
+                            "name": "subtext_full_width_divider",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Section",
@@ -985,5 +1080,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1526923864
+    "modified": 1527357188
 }

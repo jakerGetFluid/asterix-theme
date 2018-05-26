@@ -27,6 +27,17 @@
   color: $white;
 }
 
+.divider-full {
+  margin-top: 3rem;
+  hr {
+    max-width: 100%;
+  }
+}
+
+.bg-overlay::before {
+  background-color: rgba(0,0,0,.50);
+}
+
 /* SLICK SLIDER */
 
 .slick-list {
