@@ -52,40 +52,84 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 // *****************
 //function my_custom_post_types() {
   
-  // sample data for a cpt
-  // repeat this block for declaring custom post types
+//   sample data for a cpt
+//   repeat this block for declaring custom post types
   
-  //$singular_name = 'Resource';
-  //$plural_name = 'Resources';
-  //$slug = 'resources';
+//   $singular_name = 'Resource';
+//   $plural_name = 'Resources';
+//   $slug = 'resources';
 
-  //$labels = array(
-  //  'name'               => $singular_name,
-  //  'singular_name'      => $singular_name,
-  //  'menu_name'          => $plural_name,
-  //  'name_admin_bar'     => $singular_name,
-  //  'add_new'            => 'Add New',
-  //  'add_new_item'       => 'Add New ' . $singular_name,
-  //  'new_item'           => 'New ' . $singular_name,
-  //  'edit_item'          => 'Edit ' . $singular_name,
-  //  'view_item'          => 'View ' . $singular_name,
-  //  'all_items'          => 'All ' . $plural_name,
-  //  'search_items'       => 'Search ' . $plural_name,
-  //  'parent_item_colon'  => 'Parent ' . $plural_name,
-  //  'not_found'          => 'No ' . $plural_name . ' found.',
-  //  'not_found_in_trash' => 'No ' . $plural_name . ' found in Trash.'
-  //);
+//   $labels = array(
+//    'name'               => $singular_name,
+//    'singular_name'      => $singular_name,
+//    'menu_name'          => $plural_name,
+//    'name_admin_bar'     => $singular_name,
+//    'add_new'            => 'Add New',
+//    'add_new_item'       => 'Add New ' . $singular_name,
+//    'new_item'           => 'New ' . $singular_name,
+//    'edit_item'          => 'Edit ' . $singular_name,
+//    'view_item'          => 'View ' . $singular_name,
+//    'all_items'          => 'All ' . $plural_name,
+//    'search_items'       => 'Search ' . $plural_name,
+//    'parent_item_colon'  => 'Parent ' . $plural_name,
+//    'not_found'          => 'No ' . $plural_name . ' found.',
+//    'not_found_in_trash' => 'No ' . $plural_name . ' found in Trash.'
+//   );
 
-  //$args = array( 
-  //  'public'      => true, 
-  //  'labels'      => $labels,
-  //  'has_archive' => true,
-  //  'query_var' => true,
-  //  'menu_icon' => 'dashicons-portfolio',
-  //  'menu_position' => 5,
-  //);
-  //register_post_type( $slug, $args );
+//   $args = array( 
+//    'public'      => true, 
+//    'labels'      => $labels,
+//    'has_archive' => true,
+//    'query_var' => true,
+//    'menu_icon' => 'dashicons-portfolio',
+//    'menu_position' => 5,
+//   );
+//   register_post_type( $slug, $args );
   
-  // end sample data for a cpt
-//}
-//add_action( 'init', 'skyward_custom_post_types' );
+//   end sample data for a cpt
+// }
+// add_action( 'init', 'skyward_custom_post_types' );
+
+
+// *********************
+// ** declare taxonomies
+// *********************
+// function skyward_custom_taxonomies() {
+
+//   sample data for a custom taxonomy
+//   for custom post type 'resources' (example above)
+//   repeat this block for declaring custom taxonomies
+
+//   $singular_name = 'Resource Type';
+//   $plural_name = 'Resource Types';
+//   $slug = 'resource-types';
+
+//   $labels = array(
+//     'name'              => $plural_name,
+//     'singular_name'     => $singular_name,
+//     'search_items'      => 'Search ' . $plural_name,
+//     'all_items'         => 'All ' . $plural_name,
+//     'most_used_items'   => null,
+//     'parent_item'       => 'Parent ' . $singular_name,
+//     'parent_item_colon' => 'Parent ' . $singular_name . ':',
+//     'edit_item'         => 'Edit ' . $singular_name,
+//     'update_item'       => 'Update ' . $singular_name,
+//     'add_new_item'      => 'Add new ' . $singular_name,
+//     'new_item_name'     => 'New ' . $singular_name,
+//     'menu_name'         => $plural_name,
+//     'not_found'         => 'No ' . $plural_name . ' found.'
+//   );
+//   $args = array(
+//     'hierarchical' => true,
+//     'public'       => true,
+//     'labels'       => $labels,
+//     'show_ui'      => true,
+//     'query_var'    => true,
+//     'rewrite'      => array( 'slug' => $slug )
+//   );
+//   register_taxonomy( $slug, 'resources', $args );
+
+//   end sample data for custom taxonomy
+
+// }
+// add_action( 'init', 'skyward_custom_taxonomies', 0 );
