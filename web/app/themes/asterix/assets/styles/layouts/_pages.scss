@@ -34,8 +34,30 @@
   }
 }
 
-.bg-overlay::before {
-  background-color: rgba(0,0,0,.50);
+.wysiwyg-section {
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-overlay {
+  position: relative;
+  &:before {
+    background-color: rgba(0,0,0,.50);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .content,
+  h2,
+  .grid-x,
+  .inner-cell {
+    position: relative;
+  }
 }
 
 /* SLICK SLIDER */
