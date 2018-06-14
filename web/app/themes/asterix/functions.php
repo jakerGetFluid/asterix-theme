@@ -50,14 +50,15 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 // *****************
 // ** declare cpt's
 // *****************
-//function my_custom_post_types() {
+//function asterix_custom_post_types() {
   
 //   sample data for a cpt
 //   repeat this block for declaring custom post types
   
 //   $singular_name = 'Resource';
-//   $plural_name = 'Resources';
-//   $slug = 'resources';
+//   $plural_name   = 'Resources';
+//   $slug          = 'resources';
+//   $dashicon      = 'dashicons-portfolio';
 
 //   $labels = array(
 //    'name'               => $singular_name,
@@ -77,32 +78,33 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 //   );
 
 //   $args = array( 
-//    'public'      => true, 
-//    'labels'      => $labels,
-//    'has_archive' => true,
-//    'query_var' => true,
-//    'menu_icon' => 'dashicons-portfolio',
+//    'public'        => true, 
+//    'labels'        => $labels,
+//    'has_archive'   => true,
+//    'query_var'     => true,
+//    'menu_icon'     => $dashicon,
 //    'menu_position' => 5,
 //   );
 //   register_post_type( $slug, $args );
   
 //   end sample data for a cpt
 // }
-// add_action( 'init', 'skyward_custom_post_types' );
+// add_action( 'init', 'asterix_custom_post_types' );
 
 
 // *********************
 // ** declare taxonomies
 // *********************
-// function skyward_custom_taxonomies() {
+// function asterix_custom_taxonomies() {
 
 //   sample data for a custom taxonomy
 //   for custom post type 'resources' (example above)
 //   repeat this block for declaring custom taxonomies
 
-//   $singular_name = 'Resource Type';
-//   $plural_name = 'Resource Types';
-//   $slug = 'resource-types';
+//   $singular_name     = 'Resource Type';
+//   $plural_name       = 'Resource Types';
+//   $slug              = 'resource-types';
+//   $related_post_type = 'resources';
 
 //   $labels = array(
 //     'name'              => $plural_name,
@@ -125,11 +127,10 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 //     'labels'       => $labels,
 //     'show_ui'      => true,
 //     'query_var'    => true,
-//     'rewrite'      => array( 'slug' => $slug )
 //   );
-//   register_taxonomy( $slug, 'resources', $args );
+//   register_taxonomy( $slug, $related_post_type, $args );
 
 //   end sample data for custom taxonomy
 
 // }
-// add_action( 'init', 'skyward_custom_taxonomies', 0 );
+// add_action( 'init', 'asterix_custom_taxonomies', 0 );
