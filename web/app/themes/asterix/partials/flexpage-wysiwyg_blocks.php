@@ -2,7 +2,7 @@
 
 $columns = get_sub_field('subtext_wysiwyg_columns');
 $columnsTitle = get_sub_field('subtext_wysiwyg_section_title');
-$columnSpacing = '';
+$columnSpacing = get_sub_field('subtext_wysiwyg_space_between_columns');
 $wysiwygFull = get_sub_field('subtext_row_settings')['subtext_row_full_width'];
 $wysiwygMargin = get_sub_field('subtext_row_settings')['subtext_row_margin'];
 $wysiwygMarginTop = $wysiwygMargin['subtext_row_margin_top'];
@@ -46,6 +46,8 @@ elseif ($columns == '2'):
   $twoColOneBgType = $twoColOneBg['subtext_column_background_type'];
   $twoColOneBgColor = $twoColOneBg['subtext_column_background_color'];
   $twoColOneBgImg = $twoColOneBg['subtext_column_background_image'];
+  $twoColOneBgOverlay = $twoColOneBg['subtext_column_background_overlay'];
+  $twoColOneText = $twoColOneBg['subtext_column_text_color'];
   $twoColTwoContent = get_sub_field('subtext_wysiwyg_two_column_section')['subtext_wysiwyg_two_column_two'];
   $twoColTwoSettings = $twoColTwoContent['subtext_column_settings'];
   $twoColTwoBg = $twoColTwoSettings['subtext_column_background'];
@@ -64,7 +66,7 @@ elseif ($columns == '2'):
     <div class="cell medium-6 large-9" style="<?php if($twoColTwoBgType == 'bgcolor'){echo 'background-color:'.$twoColTwoBgColor.';';} ?><?php if($twoColTwoBgType == 'bgimg'){echo 'background-image:url('.$twoColTwoBgImg.');';} ?>"><?php echo $twoColTwoContent['subtext_wysiwyg_two_column_two_content']; ?></div>
   <?php
   elseif($twoColStructure == '1-2'): ?>
-    <div class="cell medium-6 large-4" style="<?php if($twoColOneBgType == 'bgcolor'){echo 'background-color:'.$twoColOneBgColor.';';} ?><?php if($twoColOneBgType == 'bgimg'){echo 'background-image:url('.$twoColOneBgImg.');';} ?>"><?php echo $twoColOneContent['subtext_wysiwyg_two_column_one_content']; ?></div>
+    <div class="cell medium-6 large-4 text-<?php echo $twoColOneText; ?>" style="<?php if($twoColOneBgType == 'bgcolor'){echo 'background-color:'.$twoColOneBgColor.';';} ?><?php if($twoColOneBgType == 'bgimg'){echo 'background-image:url('.$twoColOneBgImg.');';} ?>"><?php echo $twoColOneContent['subtext_wysiwyg_two_column_one_content']; ?></div>
     <div class="cell medium-6 large-8" style="<?php if($twoColTwoBgType == 'bgcolor'){echo 'background-color:'.$twoColTwoBgColor.';';} ?><?php if($twoColTwoBgType == 'bgimg'){echo 'background-image:url('.$twoColTwoBgImg.');';} ?>"><?php echo $twoColTwoContent['subtext_wysiwyg_two_column_two_content']; ?></div>
   <?php
   elseif($twoColStructure == '2-2'): ?>
