@@ -44,3 +44,5 @@ publish
 /.htaccess
 /.htpasswd
 .env
+web/app/uploads/wp-migrate-db/
+/web/.htaccess
