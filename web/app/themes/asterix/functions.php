@@ -140,22 +140,23 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 // ****************************
 // if( function_exists('acf_add_options_page') ) {
 //   acf_add_options_page(array(
-//     'page_title'  => 'General Settings',
-//     'menu_title'  => 'Settings',
-//     'menu_slug'   => 'general-settings',
+//     'page_title'  => 'Theme General Settings',
+//     'menu_title'  => 'Theme Settings',
+//     'menu_slug'   => 'theme-general-settings',
 //     'capability'  => 'edit_posts',
-//     'redirect'    => false
+//     'redirect'    => false,
+//     'icon_url'    => 'dashicons-hammer',
 //   ));
   
 //   acf_add_options_sub_page(array(
-//     'page_title'  => 'Header Settings',
+//     'page_title'  => 'Theme Header Settings',
 //     'menu_title'  => 'Header',
-//     'parent_slug' => 'general-settings',
+//     'parent_slug' => 'theme-general-settings',
 //   ));
   
 //   acf_add_options_sub_page(array(
-//     'page_title'  => 'Footer Settings',
+//     'page_title'  => 'Theme Footer Settings',
 //     'menu_title'  => 'Footer',
-//     'parent_slug' => 'general-settings',
+//     'parent_slug' => 'theme-general-settings',
 //   ));
 // }
