@@ -160,3 +160,6 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 //     'parent_slug' => 'theme-general-settings',
 //   ));
 // }
+
+// disable Gutenberg for posts
+add_filter('use_block_editor_for_post', '__return_false', 10);
