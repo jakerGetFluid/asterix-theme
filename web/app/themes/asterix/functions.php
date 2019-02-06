@@ -134,3 +134,32 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 // }
 // add_action( 'init', 'asterix_custom_taxonomies', 0 );
+
+// ****************************
+// ** declare ACF Options Pages
+// ****************************
+// if( function_exists('acf_add_options_page') ) {
+//   acf_add_options_page(array(
+//     'page_title'  => 'Theme General Settings',
+//     'menu_title'  => 'Theme Settings',
+//     'menu_slug'   => 'theme-general-settings',
+//     'capability'  => 'edit_posts',
+//     'redirect'    => false,
+//     'icon_url'    => 'dashicons-hammer',
+//   ));
+  
+//   acf_add_options_sub_page(array(
+//     'page_title'  => 'Theme Header Settings',
+//     'menu_title'  => 'Header',
+//     'parent_slug' => 'theme-general-settings',
+//   ));
+  
+//   acf_add_options_sub_page(array(
+//     'page_title'  => 'Theme Footer Settings',
+//     'menu_title'  => 'Footer',
+//     'parent_slug' => 'theme-general-settings',
+//   ));
+// }
+
+// disable Gutenberg for posts
+add_filter('use_block_editor_for_post', '__return_false', 10);
