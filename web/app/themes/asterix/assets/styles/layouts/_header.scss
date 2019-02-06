@@ -11,3 +11,12 @@
     }
   }
 }
+
+.top-bar {
+  .top-bar-left, 
+  .top-bar-right {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+}
