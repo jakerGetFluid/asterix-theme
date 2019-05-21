@@ -19,6 +19,7 @@ if ( $is_privacy_guide ) {
 
 } else {
 
+<<<<<<< HEAD
 	$title = __('Tools');
 
 	get_current_screen()->add_help_tab( array(
@@ -32,6 +33,23 @@ if ( $is_privacy_guide ) {
 		'<p><strong>' . __('For more information:') . '</strong></p>' .
 		'<p>' . __('<a href="https://codex.wordpress.org/Tools_Screen">Documentation on Tools</a>') . '</p>' .
 		'<p>' . __('<a href="https://wordpress.org/support/">Support Forums</a>') . '</p>'
+=======
+	$title = __( 'Tools' );
+
+	get_current_screen()->add_help_tab(
+		array(
+			'id'      => 'converter',
+			'title'   => __( 'Categories and Tags Converter' ),
+			'content' => '<p>' . __( 'Categories have hierarchy, meaning that you can nest sub-categories. Tags do not have hierarchy and cannot be nested. Sometimes people start out using one on their posts, then later realize that the other would work better for their content.' ) . '</p>' .
+			'<p>' . __( 'The Categories and Tags Converter link on this screen will take you to the Import screen, where that Converter is one of the plugins you can install. Once that plugin is installed, the Activate Plugin &amp; Run Importer link will take you to a screen where you can choose to convert tags into categories or vice versa.' ) . '</p>',
+		)
+	);
+
+	get_current_screen()->set_help_sidebar(
+		'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+		'<p>' . __( '<a href="https://codex.wordpress.org/Tools_Screen">Documentation on Tools</a>' ) . '</p>' .
+		'<p>' . __( '<a href="https://wordpress.org/support/">Support Forums</a>' ) . '</p>'
+>>>>>>> develop
 	);
 }
 
@@ -52,6 +70,7 @@ if ( $is_privacy_guide ) {
 } else {
 
 	if ( current_user_can( 'import' ) ) :
+<<<<<<< HEAD
 	$cats = get_taxonomy('category');
 	$tags = get_taxonomy('post_tag');
 	if ( current_user_can($cats->cap->manage_terms) || current_user_can($tags->cap->manage_terms) ) : ?>
@@ -60,6 +79,17 @@ if ( $is_privacy_guide ) {
 		<p><?php printf( __('If you want to convert your categories to tags (or vice versa), use the <a href="%s">Categories and Tags Converter</a> available from the Import screen.'), 'import.php' ); ?></p>
 	</div>
 	<?php
+=======
+		$cats = get_taxonomy( 'category' );
+		$tags = get_taxonomy( 'post_tag' );
+		if ( current_user_can( $cats->cap->manage_terms ) || current_user_can( $tags->cap->manage_terms ) ) :
+			?>
+	<div class="card">
+		<h2 class="title"><?php _e( 'Categories and Tags Converter' ); ?></h2>
+		<p><?php printf( __( 'If you want to convert your categories to tags (or vice versa), use the <a href="%s">Categories and Tags Converter</a> available from the Import screen.' ), 'import.php' ); ?></p>
+	</div>
+			<?php
+>>>>>>> develop
 	endif;
 	endif;
 

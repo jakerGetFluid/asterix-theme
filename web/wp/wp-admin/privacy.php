@@ -39,7 +39,11 @@ if ( ! empty( $action ) ) {
 			) {
 				$privacy_page_updated_message = sprintf(
 					/* translators: %s: URL to Customizer -> Menus */
+<<<<<<< HEAD
 					__( 'Privacy Policy page updated successfully. Remember to <a href="%s">update your menus</a>!' ),
+=======
+					__( 'Privacy Policy page setting updated successfully. Remember to <a href="%s">update your menus</a>!' ),
+>>>>>>> develop
 					esc_url( add_query_arg( 'autofocus[panel]', 'nav_menus', admin_url( 'customize.php' ) ) )
 				);
 			}
@@ -58,7 +62,11 @@ if ( ! empty( $action ) ) {
 		}
 
 		$privacy_policy_page_content = WP_Privacy_Policy_Content::get_default_content();
+<<<<<<< HEAD
 		$privacy_policy_page_id = wp_insert_post(
+=======
+		$privacy_policy_page_id      = wp_insert_post(
+>>>>>>> develop
 			array(
 				'post_title'   => __( 'Privacy Policy' ),
 				'post_status'  => 'draft',
@@ -165,6 +173,7 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 
 			?>
 		</strong></p>
+<<<<<<< HEAD
 		<p>
 			<?php
 
@@ -181,6 +190,25 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 		<?php
 	}
 	?>
+=======
+		<?php
+	}
+	?>
+	<p>
+		<?php
+
+		printf(
+			/* translators: 1: Privacy Policy guide URL, 2: additional link attributes, 3: accessibility text */
+			__( 'Need help putting together your new Privacy Policy page? <a href="%1$s" %2$s>Check out our guide%3$s</a> for recommendations on what content to include, along with policies suggested by your plugins and theme.' ),
+			admin_url( 'tools.php?wp-privacy-policy-guide' ),
+			'',
+			''
+		);
+
+		?>
+	</p>
+
+>>>>>>> develop
 	<hr>
 	<table class="form-table tools-privacy-policy-page">
 		<tr>
@@ -195,6 +223,7 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 			</th>
 			<td>
 				<?php
+<<<<<<< HEAD
 				$has_pages = (bool) get_posts( array(
 					'post_type' => 'page',
 					'posts_per_page' => 1,
@@ -205,6 +234,21 @@ require_once( ABSPATH . 'wp-admin/admin-header.php' );
 				) );
 
 				if ( $has_pages ) : ?>
+=======
+				$has_pages = (bool) get_posts(
+					array(
+						'post_type'      => 'page',
+						'posts_per_page' => 1,
+						'post_status'    => array(
+							'publish',
+							'draft',
+						),
+					)
+				);
+
+				if ( $has_pages ) :
+					?>
+>>>>>>> develop
 					<form method="post" action="">
 						<label for="page_for_privacy_policy">
 							<?php _e( 'Select an existing page:' ); ?>
