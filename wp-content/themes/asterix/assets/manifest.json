@@ -12,6 +12,12 @@
       ],
       "main": true
     },
+    "admin.css": {
+      "files": [
+        "styles/admin/admin-style.scss"
+      ],
+      "main": false
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
