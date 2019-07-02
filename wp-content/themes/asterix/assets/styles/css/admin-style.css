@@ -1,0 +1,13 @@
+.acf-flexible-content .layout {
+  border-color: #777777 !important;
+  border-width: 2px !important;
+}
+
+.acf-flexible-content .layout.-collapsed {
+  
+}
+
+.acf-flexible-content .layout .acf-fc-layout-handle {
+  background-color: #777777;
+  color: #ffffff !important;
+}

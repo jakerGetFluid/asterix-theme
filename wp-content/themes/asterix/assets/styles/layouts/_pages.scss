@@ -1,0 +1,97 @@
+#site-wrap-inner {
+  &.grid-container.full {
+    margin-top: 0;
+    max-width: 100%;
+
+    .main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.margin-right {
+  margin-right: $global-margin;
+}
+
+.padding-all {
+  padding: $global-padding;
+}
+
+.padding-vertical {
+  padding-bottom: $global-padding;
+  padding-top: $global-padding;
+}
+
+.text-light {
+  color: $white;
+}
+
+.divider-full {
+  margin-top: 3rem;
+  hr {
+    max-width: 100%;
+  }
+}
+
+.wysiwyg-section {
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-overlay {
+  position: relative;
+  &:before {
+    background-color: rgba(0,0,0,.50);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .content,
+  h2,
+  .grid-x,
+  .inner-cell {
+    position: relative;
+  }
+}
+
+/* SLICK SLIDER */
+
+.slick-list {
+  margin-left: -$global-margin;
+}
+
+.slick-slide {
+  padding-left: $global-padding; 
+}
+
+.slider-carousel {
+  background-position: center;
+  background-size: cover;
+}
+
+.slick-slider.full {
+  
+  .slider-carousel-inner {
+    align-items: center;
+    display: flex !important;
+    height: 400px;
+  }
+  
+  .slick-prev, .slick-next {
+    z-index: 100;
+  }
+    
+  .slick-prev {
+    left: 25px;
+  }
+    
+  .slick-next {
+    right: 25px;
+  }
+}

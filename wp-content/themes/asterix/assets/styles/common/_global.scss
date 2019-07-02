@@ -1,0 +1,8 @@
+.content {
+  margin-top: 3rem;
+  
+  @include breakpoint(medium down) {
+    padding-left: $global-padding;
+    padding-right: $global-padding;
+  }
+}
